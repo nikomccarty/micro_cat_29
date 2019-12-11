@@ -1,6 +1,5 @@
 from .general_utils import *
 from .viz import *
-from .analysis import *
 
 __author__ = 'Niko McCarty'
 __email__ = 'nmccarty@caltech.edu'
