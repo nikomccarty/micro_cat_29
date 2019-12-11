@@ -3,6 +3,7 @@ import pandas as pd
 import warnings
 import scipy.optimize
 import scipy.stats as st
+import tqdm
 
 def draw_bs_sample(data):
     """Draw a bootstrap sample from a 1D data set."""
