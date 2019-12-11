@@ -1,27 +1,27 @@
 import numpy as np
 import pandas as pd
+import bokeh_catplot
+import bokeh 
+import bokeh.io
+from bokeh.themes import Theme
+from bokeh.io import output_file, save, output_notebook
+from bokeh.plotting import figure
 
 import holoviews as hv
 hv.extension('bokeh')
 
-import tinypkg.general_utils as utils
 
+def plot_with_error_bars(means, confs, names, **kwargs):
+    """Make a horizontal plot of means/conf ints with error bars."""
+    frame_height = kwargs.pop("frame_height", 150)
+    frame_width = kwargs.pop("frame_width", 450)
 
-def plot_timecourse(df, variable, value, condition=None, split=None, sort=None, cmap=None, show_all=False,
-                    show_points='default', legend=False, height=350, width=500, additional_opts={}):
-#   ...
+    p = bokeh.plotting.figure(
+        y_range=names, frame_height=frame_height, frame_width=frame_width, **kwargs
+    )
 
-    # Check columns
-    utils.check_df_col(df, variable, name='variable')
-    utils.check_df_col(df, value, name='value')
-    utils.check_df_col(df, condition, name='condition')
-    utils.check_df_col(df, split, name='split')
-    utils.check_df_col(df, sort, name='sort')
+    p.circle(x=means, y=names)
+    for conf, name in zip(confs, names):
+        p.line(x=conf, y=[name, name], line_width=2)
 
-#   ...
-
-    # Check for replicates; aggregate df
-    groups = [grouping for grouping in (condition, split) if grouping is not None]
-    if groups == []:
-        groups = None
-    replicates, df = utils.check_replicates(df, variable, value, groups)
+    return p
