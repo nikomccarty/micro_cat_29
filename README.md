@@ -10,3 +10,25 @@ In this repository, there is a package that holds functions necessary for the cr
 
 Authors:
 Niko McCarty, Emanuel Flores-Bautista and Rebecca Wipfler
+
+
+## Getting started
+Clone this repository with
+```
+git clone https://github.com/nmccarty3/micro_cat_29.git
+```
+Navigate to the new directory and install with
+
+```
+pip install -e .
+```
+
+for a dynamic, editable package.
+
+Or, run
+
+```
+python setup.py install
+```
+
+for a more static build. (You can upgrade the package as it's updated and pulled from GitHub with the same command.)
