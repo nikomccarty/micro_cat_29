@@ -5,6 +5,8 @@ import scipy.optimize
 import scipy.stats as st
 import tqdm
 
+rg = np.random.default_rng()
+
 def draw_bs_sample(data):
     """Draw a bootstrap sample from a 1D data set."""
     return np.random.choice(data, size=len(data))
@@ -119,7 +121,7 @@ def draw_bs_reps_mle(mle_fun, data, args=(), size=1, progress_bar=False):
     return np.array([mle_fun(draw_bs_sample(data), *args) for _ in iterator])
 
 def draw_gamma(alpha, beta, size=1):
-    return rg.gamma(alpha, 1/beta, size=size)
+    return rg.gamma(alpha, 1/beta, size=size))
 
 def ecdf(x, data):
     """Give the value of an ECDF at arbitrary points x."""
