@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import warnings
 
 def draw_bs_sample(data):
     """Draw a bootstrap sample from a 1D data set."""
