@@ -7,6 +7,7 @@ import tqdm
 
 rg = np.random.default_rng()
 
+#The "draw_xx" functions were created by GitHub user @justinbois
 def draw_bs_sample(data):
     """Draw a bootstrap sample from a 1D data set."""
     return np.random.choice(data, size=len(data))
@@ -49,6 +50,7 @@ def double_exponential_cdf(beta_1, beta_2, t):
     cdf= cnt * ((1 / beta_1) * (1 - np.exp(-beta_1 * t)) - (1 / beta_2) * (1 - np.exp(-beta_2*t)))
     return cdf
 
+#Our "log_like..." functions are adapted from functions written by @justinbois
 def log_like_iid_gamma_log_params(log_params, n):
     """
     Log likelihood for i.i.d. Gamma measurements with
