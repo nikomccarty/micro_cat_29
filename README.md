@@ -11,6 +11,8 @@ In this repository, there is a package that holds functions necessary for the cr
 Authors:
 Niko McCarty, Emanuel Flores-Bautista and Rebecca Wipfler
 
+Many of the functions supplied in this GitHub repository were created by Justin Bois @justinbois // GitHub: https://github.com/justinbois. These functions were created as part of the course "BE/Bi 103a", which was offered at Caltech in the Fall of 2019.
+
 
 ## Getting started
 Clone this repository with
