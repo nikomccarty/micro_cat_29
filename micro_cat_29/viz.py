@@ -1,3 +1,5 @@
+#Most of these viz functions are adapted directly from GitHub user: @justinbois (https://github.com/justinbois). We also heavily relied on the bokeh_catplot module, created by @justinbois.
+
 import numpy as np
 import pandas as pd
 import bokeh_catplot
